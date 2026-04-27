@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SICOM Ingeniería | Servicios Integrales</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #1f2933;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 24px 8%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 500;
+    }
+
+    .hero {
+      max-width: 780px;
+      padding-bottom: 70px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #dbeafe;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+      color: #52616b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #1e3a8a;
+    }
+
+    .about {
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #e0f2fe;
+      padding: 35px;
+      border-radius: 18px;
+      border-left: 6px solid #0284c7;
+    }
+
+    .contact {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 45px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">SICOM <span>Ingeniería</span></div>
+      <div>
+        <a href="#servicios">Servicios</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>Soluciones técnicas para construcción, mantenimiento e industria</h1>
+      <p>
+        Servicios integrales con enfoque profesional: instalaciones, mantenimiento,
+        proyectos técnicos, diseño y asistencia para obras e industrias.
+      </p>
+      <a class="btn" href="#contacto">Solicitar presupuesto</a>
+    </div>
+  </header>
+
+  <section id="servicios">
+    <h2 class="section-title">Nuestros servicios</h2>
+    <p class="section-subtitle">
+      Brindamos soluciones técnicas para clientes particulares, comercios, obras e industrias.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Instalaciones eléctricas</h3>
+        <p>Montaje, mantenimiento, tableros eléctricos, canalizaciones, cableado y puesta en marcha.</p>
+      </div>
+
+      <div class="card">
+        <h3>Mantenimiento industrial</h3>
+        <p>Diagnóstico de fallas, asistencia técnica, reparación de equipos y soporte en paradas de producción.</p>
+      </div>
+
+      <div class="card">
+        <h3>Construcción y reformas</h3>
+        <p>Obras llave en mano, remodelaciones, coordinación de tareas y ejecución integral de trabajos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Diseño técnico</h3>
+        <p>Diseño en SolidWorks, planos técnicos, estructuras metálicas, cómputos y documentación de obra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="empresa" class="about">
+    <div>
+      <h2 class="section-title" style="text-align:left;">Sobre SICOM</h2>
+      <p>
+        SICOM Ingeniería nace con el objetivo de ofrecer servicios técnicos integrales,
+        combinando experiencia en electricidad industrial, mantenimiento, construcción,
+        diseño técnico y soluciones para empresas.
+      </p>
+      <br />
+      <p>
+        Nuestro enfoque es simple: trabajo prolijo, planificación clara, documentación,
+        seguridad y cumplimiento de los compromisos asumidos con cada cliente.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3>¿Por qué elegirnos?</h3>
+      <p>
+        Porque integramos conocimiento técnico, experiencia práctica y visión de empresa
+        para entregar soluciones confiables, ordenadas y profesionales.
+      </p>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <h2>¿Necesitás un presupuesto?</h2>
+    <p>Contactanos para evaluar tu obra, reforma, instalación o proyecto técnico.</p>
+    <a class="btn" href="https://wa.me/5490000000000" target="_blank">Enviar WhatsApp</a>
+  </section>
+
+  <footer>
+    © 2026 SICOM Ingeniería. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
