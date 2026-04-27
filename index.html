@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SICOM Ingeniería | Servicios Integrales</title>
+
+  <title>SICOM Ingeniería | Electricidad Industrial, Mantenimiento y Construcción en Santa Fe</title>
+  <meta name="description" content="SICOM Ingeniería brinda servicios de electricidad industrial, mantenimiento técnico, construcción, reformas, tableros eléctricos y diseño técnico en Santa Fe y Santo Tomé." />
+  <meta name="keywords" content="SICOM Ingeniería, electricidad industrial Santa Fe, mantenimiento industrial Santo Tomé, tableros eléctricos, construcción Santa Fe, diseño técnico SolidWorks" />
+  <meta name="author" content="SICOM Ingeniería" />
+
   <style>
     * {
       margin: 0;
@@ -12,14 +17,23 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #f4f6f8;
+      background: #f5f7fa;
       color: #1f2933;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.86), rgba(15, 23, 42, 0.88)),
+        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
       padding: 24px 8%;
     }
@@ -28,12 +42,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 70px;
+      margin-bottom: 90px;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 30px;
+      font-weight: 800;
       letter-spacing: 1px;
     }
 
@@ -44,231 +58,455 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 24px;
-      font-weight: 500;
+      margin-left: 26px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
     }
 
     .hero {
-      max-width: 780px;
-      padding-bottom: 70px;
+      max-width: 850px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.14);
+      color: #7dd3fc;
+      padding: 8px 14px;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 999px;
+      margin-bottom: 22px;
+      font-weight: 700;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.05;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
+      font-size: 21px;
+      max-width: 760px;
+      margin-bottom: 34px;
       color: #dbeafe;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .btn {
       display: inline-block;
       background: #38bdf8;
-      color: #0f172a;
-      padding: 14px 28px;
-      border-radius: 8px;
+      color: #020617;
+      padding: 15px 28px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
     }
 
     .btn:hover {
       background: #7dd3fc;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .trust-bar {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .trust-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 20px;
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 24px;
+      color: #38bdf8;
     }
 
     section {
-      padding: 70px 8%;
+      padding: 85px 8%;
     }
 
     .section-title {
       text-align: center;
-      font-size: 34px;
+      font-size: clamp(30px, 4vw, 44px);
       margin-bottom: 14px;
       color: #0f172a;
     }
 
     .section-subtitle {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
+      max-width: 780px;
+      margin: 0 auto 50px;
       color: #52616b;
+      font-size: 18px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
     }
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      transition: 0.3s;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+    }
+
+    .card .icon {
+      font-size: 34px;
+      margin-bottom: 14px;
     }
 
     .card h3 {
       margin-bottom: 12px;
       color: #1e3a8a;
+      font-size: 22px;
     }
 
-    .about {
+    .split {
       background: white;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 46px;
       align-items: center;
     }
 
-    .about-box {
-      background: #e0f2fe;
-      padding: 35px;
-      border-radius: 18px;
-      border-left: 6px solid #0284c7;
+    .highlight-box {
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      padding: 38px;
+      border-radius: 22px;
+      border-left: 7px solid #0284c7;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
 
-    .contact {
-      background: #0f172a;
+    .list {
+      margin-top: 20px;
+      list-style: none;
+    }
+
+    .list li {
+      margin-bottom: 12px;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0284c7;
+      font-weight: 900;
+    }
+
+    .process {
+      background: #eef6ff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.07);
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      background: #1e3a8a;
+      color: white;
+      border-radius: 50%;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
       text-align: center;
     }
 
-    .contact h2 {
-      font-size: 34px;
-      margin-bottom: 16px;
+    .cta h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 18px;
     }
 
-    .contact p {
-      color: #cbd5e1;
-      margin-bottom: 28px;
+    .cta p {
+      color: #dbeafe;
+      max-width: 760px;
+      margin: 0 auto 32px;
+      font-size: 19px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #25d366;
+      color: white;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      z-index: 20;
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
     }
 
     footer {
       background: #020617;
       color: #94a3b8;
       text-align: center;
-      padding: 22px;
+      padding: 28px;
       font-size: 14px;
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
+      header {
+        padding: 22px 6%;
+      }
+
       nav {
         flex-direction: column;
         gap: 18px;
-        margin-bottom: 45px;
+        margin-bottom: 60px;
+      }
+
+      nav div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
       }
 
       nav a {
-        margin: 0 8px;
+        margin-left: 0;
       }
 
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .about {
+      .split {
         grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 6%;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header id="inicio">
     <nav>
       <div class="logo">SICOM <span>Ingeniería</span></div>
       <div>
         <a href="#servicios">Servicios</a>
         <a href="#empresa">Empresa</a>
+        <a href="#proceso">Proceso</a>
         <a href="#contacto">Contacto</a>
       </div>
     </nav>
 
     <div class="hero">
-      <h1>Soluciones técnicas para construcción, mantenimiento e industria</h1>
+      <span class="tag">Electricidad industrial · Mantenimiento · Construcción · Diseño técnico</span>
+      <h1>Soluciones técnicas profesionales para obras, industrias y empresas</h1>
       <p>
-        Servicios integrales con enfoque profesional: instalaciones, mantenimiento,
-        proyectos técnicos, diseño y asistencia para obras e industrias.
+        En SICOM Ingeniería resolvemos instalaciones eléctricas, mantenimiento industrial,
+        reformas, tableros eléctricos y proyectos técnicos en Santa Fe y Santo Tomé,
+        con planificación, seguridad y criterio profesional.
       </p>
-      <a class="btn" href="#contacto">Solicitar presupuesto</a>
+      <div class="hero-actions">
+        <a class="btn" href="https://wa.me/5493415142771?text=Hola,%20quiero%20solicitar%20un%20presupuesto%20para%20un%20servicio%20de%20SICOM%20Ingeniería." target="_blank">Solicitar presupuesto</a>
+        <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-item">
+        <strong>+10 años</strong>
+        Experiencia técnica e industrial
+      </div>
+      <div class="trust-item">
+        <strong>360°</strong>
+        Obra, mantenimiento y diseño
+      </div>
+      <div class="trust-item">
+        <strong>Santa Fe</strong>
+        Atención local y regional
+      </div>
+      <div class="trust-item">
+        <strong>Empresa</strong>
+        Trabajo documentado y profesional
+      </div>
     </div>
   </header>
 
   <section id="servicios">
-    <h2 class="section-title">Nuestros servicios</h2>
+    <h2 class="section-title">Servicios principales</h2>
     <p class="section-subtitle">
-      Brindamos soluciones técnicas para clientes particulares, comercios, obras e industrias.
+      Trabajamos para clientes particulares, comercios, constructoras, talleres e industrias que necesitan soluciones técnicas confiables.
     </p>
 
     <div class="cards">
       <div class="card">
-        <h3>Instalaciones eléctricas</h3>
-        <p>Montaje, mantenimiento, tableros eléctricos, canalizaciones, cableado y puesta en marcha.</p>
+        <div class="icon">⚡</div>
+        <h3>Electricidad industrial</h3>
+        <p>Instalaciones, tableros eléctricos, canalizaciones, cableado, puesta en marcha y diagnóstico de fallas.</p>
       </div>
 
       <div class="card">
-        <h3>Mantenimiento industrial</h3>
-        <p>Diagnóstico de fallas, asistencia técnica, reparación de equipos y soporte en paradas de producción.</p>
+        <div class="icon">🏭</div>
+        <h3>Mantenimiento técnico</h3>
+        <p>Asistencia en equipos, paradas de producción, sistemas eléctricos, hidráulicos, neumáticos y soporte operativo.</p>
       </div>
 
       <div class="card">
+        <div class="icon">🏗️</div>
         <h3>Construcción y reformas</h3>
-        <p>Obras llave en mano, remodelaciones, coordinación de tareas y ejecución integral de trabajos.</p>
+        <p>Reformas llave en mano, coordinación de gremios, presupuestos técnicos y ejecución ordenada de obra.</p>
       </div>
 
       <div class="card">
+        <div class="icon">📐</div>
         <h3>Diseño técnico</h3>
-        <p>Diseño en SolidWorks, planos técnicos, estructuras metálicas, cómputos y documentación de obra.</p>
+        <p>Planos, documentación técnica, diseño en SolidWorks, estructuras metálicas, cómputos y desarrollo de soluciones.</p>
       </div>
     </div>
   </section>
 
-  <section id="empresa" class="about">
+  <section id="empresa" class="split">
     <div>
-      <h2 class="section-title" style="text-align:left;">Sobre SICOM</h2>
+      <h2 class="section-title" style="text-align:left;">Una empresa técnica, no un servicio improvisado</h2>
       <p>
-        SICOM Ingeniería nace con el objetivo de ofrecer servicios técnicos integrales,
-        combinando experiencia en electricidad industrial, mantenimiento, construcción,
-        diseño técnico y soluciones para empresas.
+        SICOM Ingeniería integra experiencia práctica de campo con planificación técnica.
+        Nuestro objetivo es que cada trabajo tenga orden, seguridad, documentación y una solución real al problema del cliente.
       </p>
-      <br />
-      <p>
-        Nuestro enfoque es simple: trabajo prolijo, planificación clara, documentación,
-        seguridad y cumplimiento de los compromisos asumidos con cada cliente.
-      </p>
+      <ul class="list">
+        <li>Relevamiento previo y análisis técnico.</li>
+        <li>Presupuestos claros y alcance definido.</li>
+        <li>Trabajo prolijo, seguro y documentado.</li>
+        <li>Comunicación directa durante la ejecución.</li>
+        <li>Enfoque en soluciones duraderas, no parches temporales.</li>
+      </ul>
     </div>
 
-    <div class="about-box">
-      <h3>¿Por qué elegirnos?</h3>
+    <div class="highlight-box">
+      <h3>¿Qué problema resolvemos?</h3>
       <p>
-        Porque integramos conocimiento técnico, experiencia práctica y visión de empresa
-        para entregar soluciones confiables, ordenadas y profesionales.
+        Evitamos fallas, desorden de obra, paradas innecesarias, presupuestos confusos
+        y trabajos sin criterio técnico. Diseñamos y ejecutamos soluciones con visión profesional.
       </p>
     </div>
   </section>
 
-  <section id="contacto" class="contact">
-    <h2>¿Necesitás un presupuesto?</h2>
-    <p>Contactanos para evaluar tu obra, reforma, instalación o proyecto técnico.</p>
-    <a class="btn" href="https://wa.me/5490000000000" target="_blank">Enviar WhatsApp</a>
+  <section id="proceso" class="process">
+    <h2 class="section-title">Cómo trabajamos</h2>
+    <p class="section-subtitle">
+      Un proceso simple para que el cliente sepa qué se hará, cuánto costará y cómo se ejecutará.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <h3>Consulta inicial</h3>
+        <p>Recibimos tu necesidad por WhatsApp y pedimos fotos, ubicación o datos básicos del trabajo.</p>
+      </div>
+      <div class="step">
+        <h3>Relevamiento</h3>
+        <p>Analizamos el problema, materiales, riesgos, tiempos y posibles soluciones técnicas.</p>
+      </div>
+      <div class="step">
+        <h3>Presupuesto</h3>
+        <p>Presentamos una propuesta clara, con alcance de trabajo y condiciones definidas.</p>
+      </div>
+      <div class="step">
+        <h3>Ejecución</h3>
+        <p>Realizamos el trabajo con orden, seguridad, seguimiento y comunicación permanente.</p>
+      </div>
+    </div>
   </section>
+
+  <section id="contacto" class="cta">
+    <h2>¿Necesitás resolver un problema técnico?</h2>
+    <p>
+      Escribinos por WhatsApp y contanos qué necesitás. Podemos ayudarte con electricidad industrial,
+      mantenimiento, reformas, tableros, diseño técnico o una solución integral para tu proyecto.
+    </p>
+    <a class="btn" href="https://wa.me/5493415142771?text=Hola,%20quiero%20solicitar%20un%20presupuesto%20para%20un%20servicio%20de%20SICOM%20Ingeniería.%20Mi%20consulta%20es%20sobre:" target="_blank">Hablar por WhatsApp</a>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/5493415142771?text=Hola,%20quiero%20consultar%20por%20un%20servicio%20de%20SICOM%20Ingeniería." target="_blank" aria-label="WhatsApp">☘</a>
 
   <footer>
-    © 2026 SICOM Ingeniería. Todos los derechos reservados.
+    © 2026 SICOM Ingeniería · Servicios Integrales de Construcción, Mantenimiento y Diseño Técnico · Santa Fe, Argentina
   </footer>
 
 </body>
